@@ -15,25 +15,12 @@ import { Route as PrivacypolicyImport } from './routes/privacypolicy'
 import { Route as NotFoundImport } from './routes/not-found'
 import { Route as ErrorImport } from './routes/error'
 import { Route as IndexImport } from './routes/index'
-import { Route as TripIndexImport } from './routes/trip/index'
-import { Route as ProfileIndexImport } from './routes/profile/index'
-import { Route as MapIndexImport } from './routes/map/index'
-import { Route as ExploreIndexImport } from './routes/explore/index'
-import { Route as TripCreateImport } from './routes/trip/create'
 import { Route as SettingsGeneralImport } from './routes/settings/general'
-import { Route as ProfileUserIdImport } from './routes/profile/$userId'
-import { Route as MapUserIdImport } from './routes/map/$userId'
 import { Route as AuthVerifyEmailImport } from './routes/auth/verify-email'
 import { Route as AuthResetPasswordImport } from './routes/auth/reset-password'
 import { Route as AuthRegisterImport } from './routes/auth/register'
 import { Route as AuthLoginImport } from './routes/auth/login'
 import { Route as AuthForgotPasswordImport } from './routes/auth/forgot-password'
-import { Route as ExploreCountryIndexImport } from './routes/explore/country/index'
-import { Route as ExploreCityIndexImport } from './routes/explore/city/index'
-import { Route as TripViewTripIdImport } from './routes/trip/view/$tripId'
-import { Route as TripEditTripIdImport } from './routes/trip/edit/$tripId'
-import { Route as ExploreCountryCountryIdImport } from './routes/explore/country/$countryId'
-import { Route as ExploreCityCityIdImport } from './routes/explore/city/$cityId'
 
 // Create/Update Routes
 
@@ -61,51 +48,9 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const TripIndexRoute = TripIndexImport.update({
-  id: '/trip/',
-  path: '/trip/',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const ProfileIndexRoute = ProfileIndexImport.update({
-  id: '/profile/',
-  path: '/profile/',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const MapIndexRoute = MapIndexImport.update({
-  id: '/map/',
-  path: '/map/',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const ExploreIndexRoute = ExploreIndexImport.update({
-  id: '/explore/',
-  path: '/explore/',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const TripCreateRoute = TripCreateImport.update({
-  id: '/trip/create',
-  path: '/trip/create',
-  getParentRoute: () => rootRoute,
-} as any)
-
 const SettingsGeneralRoute = SettingsGeneralImport.update({
   id: '/settings/general',
   path: '/settings/general',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const ProfileUserIdRoute = ProfileUserIdImport.update({
-  id: '/profile/$userId',
-  path: '/profile/$userId',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const MapUserIdRoute = MapUserIdImport.update({
-  id: '/map/$userId',
-  path: '/map/$userId',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -136,42 +81,6 @@ const AuthLoginRoute = AuthLoginImport.update({
 const AuthForgotPasswordRoute = AuthForgotPasswordImport.update({
   id: '/auth/forgot-password',
   path: '/auth/forgot-password',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const ExploreCountryIndexRoute = ExploreCountryIndexImport.update({
-  id: '/explore/country/',
-  path: '/explore/country/',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const ExploreCityIndexRoute = ExploreCityIndexImport.update({
-  id: '/explore/city/',
-  path: '/explore/city/',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const TripViewTripIdRoute = TripViewTripIdImport.update({
-  id: '/trip/view/$tripId',
-  path: '/trip/view/$tripId',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const TripEditTripIdRoute = TripEditTripIdImport.update({
-  id: '/trip/edit/$tripId',
-  path: '/trip/edit/$tripId',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const ExploreCountryCountryIdRoute = ExploreCountryCountryIdImport.update({
-  id: '/explore/country/$countryId',
-  path: '/explore/country/$countryId',
-  getParentRoute: () => rootRoute,
-} as any)
-
-const ExploreCityCityIdRoute = ExploreCityCityIdImport.update({
-  id: '/explore/city/$cityId',
-  path: '/explore/city/$cityId',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -242,102 +151,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthVerifyEmailImport
       parentRoute: typeof rootRoute
     }
-    '/map/$userId': {
-      id: '/map/$userId'
-      path: '/map/$userId'
-      fullPath: '/map/$userId'
-      preLoaderRoute: typeof MapUserIdImport
-      parentRoute: typeof rootRoute
-    }
-    '/profile/$userId': {
-      id: '/profile/$userId'
-      path: '/profile/$userId'
-      fullPath: '/profile/$userId'
-      preLoaderRoute: typeof ProfileUserIdImport
-      parentRoute: typeof rootRoute
-    }
     '/settings/general': {
       id: '/settings/general'
       path: '/settings/general'
       fullPath: '/settings/general'
       preLoaderRoute: typeof SettingsGeneralImport
-      parentRoute: typeof rootRoute
-    }
-    '/trip/create': {
-      id: '/trip/create'
-      path: '/trip/create'
-      fullPath: '/trip/create'
-      preLoaderRoute: typeof TripCreateImport
-      parentRoute: typeof rootRoute
-    }
-    '/explore/': {
-      id: '/explore/'
-      path: '/explore'
-      fullPath: '/explore'
-      preLoaderRoute: typeof ExploreIndexImport
-      parentRoute: typeof rootRoute
-    }
-    '/map/': {
-      id: '/map/'
-      path: '/map'
-      fullPath: '/map'
-      preLoaderRoute: typeof MapIndexImport
-      parentRoute: typeof rootRoute
-    }
-    '/profile/': {
-      id: '/profile/'
-      path: '/profile'
-      fullPath: '/profile'
-      preLoaderRoute: typeof ProfileIndexImport
-      parentRoute: typeof rootRoute
-    }
-    '/trip/': {
-      id: '/trip/'
-      path: '/trip'
-      fullPath: '/trip'
-      preLoaderRoute: typeof TripIndexImport
-      parentRoute: typeof rootRoute
-    }
-    '/explore/city/$cityId': {
-      id: '/explore/city/$cityId'
-      path: '/explore/city/$cityId'
-      fullPath: '/explore/city/$cityId'
-      preLoaderRoute: typeof ExploreCityCityIdImport
-      parentRoute: typeof rootRoute
-    }
-    '/explore/country/$countryId': {
-      id: '/explore/country/$countryId'
-      path: '/explore/country/$countryId'
-      fullPath: '/explore/country/$countryId'
-      preLoaderRoute: typeof ExploreCountryCountryIdImport
-      parentRoute: typeof rootRoute
-    }
-    '/trip/edit/$tripId': {
-      id: '/trip/edit/$tripId'
-      path: '/trip/edit/$tripId'
-      fullPath: '/trip/edit/$tripId'
-      preLoaderRoute: typeof TripEditTripIdImport
-      parentRoute: typeof rootRoute
-    }
-    '/trip/view/$tripId': {
-      id: '/trip/view/$tripId'
-      path: '/trip/view/$tripId'
-      fullPath: '/trip/view/$tripId'
-      preLoaderRoute: typeof TripViewTripIdImport
-      parentRoute: typeof rootRoute
-    }
-    '/explore/city/': {
-      id: '/explore/city/'
-      path: '/explore/city'
-      fullPath: '/explore/city'
-      preLoaderRoute: typeof ExploreCityIndexImport
-      parentRoute: typeof rootRoute
-    }
-    '/explore/country/': {
-      id: '/explore/country/'
-      path: '/explore/country'
-      fullPath: '/explore/country'
-      preLoaderRoute: typeof ExploreCountryIndexImport
       parentRoute: typeof rootRoute
     }
   }
@@ -355,20 +173,7 @@ export interface FileRoutesByFullPath {
   '/auth/register': typeof AuthRegisterRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
   '/auth/verify-email': typeof AuthVerifyEmailRoute
-  '/map/$userId': typeof MapUserIdRoute
-  '/profile/$userId': typeof ProfileUserIdRoute
   '/settings/general': typeof SettingsGeneralRoute
-  '/trip/create': typeof TripCreateRoute
-  '/explore': typeof ExploreIndexRoute
-  '/map': typeof MapIndexRoute
-  '/profile': typeof ProfileIndexRoute
-  '/trip': typeof TripIndexRoute
-  '/explore/city/$cityId': typeof ExploreCityCityIdRoute
-  '/explore/country/$countryId': typeof ExploreCountryCountryIdRoute
-  '/trip/edit/$tripId': typeof TripEditTripIdRoute
-  '/trip/view/$tripId': typeof TripViewTripIdRoute
-  '/explore/city': typeof ExploreCityIndexRoute
-  '/explore/country': typeof ExploreCountryIndexRoute
 }
 
 export interface FileRoutesByTo {
@@ -381,20 +186,7 @@ export interface FileRoutesByTo {
   '/auth/register': typeof AuthRegisterRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
   '/auth/verify-email': typeof AuthVerifyEmailRoute
-  '/map/$userId': typeof MapUserIdRoute
-  '/profile/$userId': typeof ProfileUserIdRoute
   '/settings/general': typeof SettingsGeneralRoute
-  '/trip/create': typeof TripCreateRoute
-  '/explore': typeof ExploreIndexRoute
-  '/map': typeof MapIndexRoute
-  '/profile': typeof ProfileIndexRoute
-  '/trip': typeof TripIndexRoute
-  '/explore/city/$cityId': typeof ExploreCityCityIdRoute
-  '/explore/country/$countryId': typeof ExploreCountryCountryIdRoute
-  '/trip/edit/$tripId': typeof TripEditTripIdRoute
-  '/trip/view/$tripId': typeof TripViewTripIdRoute
-  '/explore/city': typeof ExploreCityIndexRoute
-  '/explore/country': typeof ExploreCountryIndexRoute
 }
 
 export interface FileRoutesById {
@@ -408,20 +200,7 @@ export interface FileRoutesById {
   '/auth/register': typeof AuthRegisterRoute
   '/auth/reset-password': typeof AuthResetPasswordRoute
   '/auth/verify-email': typeof AuthVerifyEmailRoute
-  '/map/$userId': typeof MapUserIdRoute
-  '/profile/$userId': typeof ProfileUserIdRoute
   '/settings/general': typeof SettingsGeneralRoute
-  '/trip/create': typeof TripCreateRoute
-  '/explore/': typeof ExploreIndexRoute
-  '/map/': typeof MapIndexRoute
-  '/profile/': typeof ProfileIndexRoute
-  '/trip/': typeof TripIndexRoute
-  '/explore/city/$cityId': typeof ExploreCityCityIdRoute
-  '/explore/country/$countryId': typeof ExploreCountryCountryIdRoute
-  '/trip/edit/$tripId': typeof TripEditTripIdRoute
-  '/trip/view/$tripId': typeof TripViewTripIdRoute
-  '/explore/city/': typeof ExploreCityIndexRoute
-  '/explore/country/': typeof ExploreCountryIndexRoute
 }
 
 export interface FileRouteTypes {
@@ -436,20 +215,7 @@ export interface FileRouteTypes {
     | '/auth/register'
     | '/auth/reset-password'
     | '/auth/verify-email'
-    | '/map/$userId'
-    | '/profile/$userId'
     | '/settings/general'
-    | '/trip/create'
-    | '/explore'
-    | '/map'
-    | '/profile'
-    | '/trip'
-    | '/explore/city/$cityId'
-    | '/explore/country/$countryId'
-    | '/trip/edit/$tripId'
-    | '/trip/view/$tripId'
-    | '/explore/city'
-    | '/explore/country'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -461,20 +227,7 @@ export interface FileRouteTypes {
     | '/auth/register'
     | '/auth/reset-password'
     | '/auth/verify-email'
-    | '/map/$userId'
-    | '/profile/$userId'
     | '/settings/general'
-    | '/trip/create'
-    | '/explore'
-    | '/map'
-    | '/profile'
-    | '/trip'
-    | '/explore/city/$cityId'
-    | '/explore/country/$countryId'
-    | '/trip/edit/$tripId'
-    | '/trip/view/$tripId'
-    | '/explore/city'
-    | '/explore/country'
   id:
     | '__root__'
     | '/'
@@ -486,20 +239,7 @@ export interface FileRouteTypes {
     | '/auth/register'
     | '/auth/reset-password'
     | '/auth/verify-email'
-    | '/map/$userId'
-    | '/profile/$userId'
     | '/settings/general'
-    | '/trip/create'
-    | '/explore/'
-    | '/map/'
-    | '/profile/'
-    | '/trip/'
-    | '/explore/city/$cityId'
-    | '/explore/country/$countryId'
-    | '/trip/edit/$tripId'
-    | '/trip/view/$tripId'
-    | '/explore/city/'
-    | '/explore/country/'
   fileRoutesById: FileRoutesById
 }
 
@@ -513,20 +253,7 @@ export interface RootRouteChildren {
   AuthRegisterRoute: typeof AuthRegisterRoute
   AuthResetPasswordRoute: typeof AuthResetPasswordRoute
   AuthVerifyEmailRoute: typeof AuthVerifyEmailRoute
-  MapUserIdRoute: typeof MapUserIdRoute
-  ProfileUserIdRoute: typeof ProfileUserIdRoute
   SettingsGeneralRoute: typeof SettingsGeneralRoute
-  TripCreateRoute: typeof TripCreateRoute
-  ExploreIndexRoute: typeof ExploreIndexRoute
-  MapIndexRoute: typeof MapIndexRoute
-  ProfileIndexRoute: typeof ProfileIndexRoute
-  TripIndexRoute: typeof TripIndexRoute
-  ExploreCityCityIdRoute: typeof ExploreCityCityIdRoute
-  ExploreCountryCountryIdRoute: typeof ExploreCountryCountryIdRoute
-  TripEditTripIdRoute: typeof TripEditTripIdRoute
-  TripViewTripIdRoute: typeof TripViewTripIdRoute
-  ExploreCityIndexRoute: typeof ExploreCityIndexRoute
-  ExploreCountryIndexRoute: typeof ExploreCountryIndexRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -539,20 +266,7 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRegisterRoute: AuthRegisterRoute,
   AuthResetPasswordRoute: AuthResetPasswordRoute,
   AuthVerifyEmailRoute: AuthVerifyEmailRoute,
-  MapUserIdRoute: MapUserIdRoute,
-  ProfileUserIdRoute: ProfileUserIdRoute,
   SettingsGeneralRoute: SettingsGeneralRoute,
-  TripCreateRoute: TripCreateRoute,
-  ExploreIndexRoute: ExploreIndexRoute,
-  MapIndexRoute: MapIndexRoute,
-  ProfileIndexRoute: ProfileIndexRoute,
-  TripIndexRoute: TripIndexRoute,
-  ExploreCityCityIdRoute: ExploreCityCityIdRoute,
-  ExploreCountryCountryIdRoute: ExploreCountryCountryIdRoute,
-  TripEditTripIdRoute: TripEditTripIdRoute,
-  TripViewTripIdRoute: TripViewTripIdRoute,
-  ExploreCityIndexRoute: ExploreCityIndexRoute,
-  ExploreCountryIndexRoute: ExploreCountryIndexRoute,
 }
 
 export const routeTree = rootRoute
@@ -574,20 +288,7 @@ export const routeTree = rootRoute
         "/auth/register",
         "/auth/reset-password",
         "/auth/verify-email",
-        "/map/$userId",
-        "/profile/$userId",
-        "/settings/general",
-        "/trip/create",
-        "/explore/",
-        "/map/",
-        "/profile/",
-        "/trip/",
-        "/explore/city/$cityId",
-        "/explore/country/$countryId",
-        "/trip/edit/$tripId",
-        "/trip/view/$tripId",
-        "/explore/city/",
-        "/explore/country/"
+        "/settings/general"
       ]
     },
     "/": {
@@ -617,47 +318,8 @@ export const routeTree = rootRoute
     "/auth/verify-email": {
       "filePath": "auth/verify-email.tsx"
     },
-    "/map/$userId": {
-      "filePath": "map/$userId.tsx"
-    },
-    "/profile/$userId": {
-      "filePath": "profile/$userId.tsx"
-    },
     "/settings/general": {
       "filePath": "settings/general.tsx"
-    },
-    "/trip/create": {
-      "filePath": "trip/create.tsx"
-    },
-    "/explore/": {
-      "filePath": "explore/index.tsx"
-    },
-    "/map/": {
-      "filePath": "map/index.tsx"
-    },
-    "/profile/": {
-      "filePath": "profile/index.tsx"
-    },
-    "/trip/": {
-      "filePath": "trip/index.tsx"
-    },
-    "/explore/city/$cityId": {
-      "filePath": "explore/city/$cityId.tsx"
-    },
-    "/explore/country/$countryId": {
-      "filePath": "explore/country/$countryId.tsx"
-    },
-    "/trip/edit/$tripId": {
-      "filePath": "trip/edit/$tripId.tsx"
-    },
-    "/trip/view/$tripId": {
-      "filePath": "trip/view/$tripId.tsx"
-    },
-    "/explore/city/": {
-      "filePath": "explore/city/index.tsx"
-    },
-    "/explore/country/": {
-      "filePath": "explore/country/index.tsx"
     }
   }
 }
